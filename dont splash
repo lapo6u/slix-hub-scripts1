@@ -1,1 +1,10 @@
-loadstring(game:HttpGet("https://vault.pandauth.com/vss/855cd7231732d9b4"))()
+local s = ({
+    [119958473240233] = "855cd7231732d9b4",
+    [84556640895285]  = "20a6d65c75c7c979",
+})[game.PlaceId]
+
+if s then
+    loadstring(game:HttpGet("https://vault.pandauth.com/vss/"..s))()
+else
+    game:GetService("StarterGui"):SetCore("SendNotification", {Title="slix", Text="Game not supported", Duration=5})
+end
